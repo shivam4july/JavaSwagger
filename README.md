@@ -47,7 +47,7 @@ Now Swagger editor is nothing but swagger.yaml file
 which you can find in following path of your project
 ```
 /Users/admin/JavaSwagger/src/main/swagger/swagger.yaml
-```yaml
+```
 you can edit this file using editor and simultenously you can see your api related documentation will change
 
 Now check swagger.yaml file
@@ -152,18 +152,24 @@ which we have define in our pom.xml
 ------------------------------------------------------------------------------------
 Flow:
 Now what happend when you hit 
+```
 http://localhost:8080/v1/pet/0
+```
 
 1)It will go to swagger.yaml
-Then check for basePath:/v1  which should match with above url
+Then check for ```basePath:/v1 ``` which should match with above url
 
-2)It will check for paths:
-"pet/{petId}" which match with our url:"pet/0"
+2)It will check for ```paths:"pet/{petId}"``` which match with our ```url:"pet/0"```
 
 
 then it will check for controller
+```
  x-swagger-router-controller: io.swagger.sample.controllers.SampleController
- which we have define in /Users/admin/JavaSwagger/inflector.yaml
+ ```
+ which we have define in 
+ ```
+ /Users/admin/JavaSwagger/inflector.yaml
+ ```
  
 # inflector.yaml:
 ------------------------------------------------- 
@@ -178,16 +184,35 @@ and  java file:SampleController
 
 Now if you go to this specific package in your eclipse inside "SampleController.java"
 
-we have method:getPetById
+#SampleController.java
+```
+package io.swagger.sample.controllers;
+
+import io.swagger.inflector.models.RequestContext;
+import io.swagger.inflector.models.ResponseContext;
+import io.swagger.sample.helpers.PetHelper;
+import io.swagger.sample.models.Pet;
+import javax.ws.rs.core.Response.Status;
+
+public class SampleController {
+	public ResponseContext getPetById(RequestContext request, int id) {
+
+		Pet pet = PetHelper.getPetById(id);
+		return new ResponseContext().status(Status.OK).entity(pet);
+	}
+}
+```
+we have method  getPetById
 this method name should match with operationId define in swagger.yaml
 ```yaml
 operationId:getPetById
 ```
 
 Next is produces and consumes define as 
+```
 application/xml
 application/json
-
+```
 Parameters:
 ```yaml
  parameters:
