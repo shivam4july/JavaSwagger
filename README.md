@@ -52,7 +52,7 @@ you can edit this file using editor and simultenously you can see your api relat
 
 Now check swagger.yaml file
 
-#swagger.yaml
+***swagger.yaml***
 -----------------------------------------------------------------
 ```yaml
 swagger: '2.0'
@@ -125,7 +125,7 @@ definitions:
 
 In this yaml we have define local host:8080
 which we have define in our pom.xml
-#pom.xml
+***pom.xml***
 ---------------------------------------------------------------------------
 ```yaml
    <plugin>
@@ -171,7 +171,7 @@ then it will check for controller
  /Users/admin/JavaSwagger/inflector.yaml
  ```
  
-# inflector.yaml:
+*** inflector.yaml:***
 ------------------------------------------------- 
 ```yaml
 controllerPackage: io.swagger.sample.controllers
@@ -184,7 +184,7 @@ and  java file:SampleController
 
 Now if you go to this specific package in your eclipse inside "SampleController.java"
 
-#SampleController.java
+***SampleController.java***
 ```
 package io.swagger.sample.controllers;
 
@@ -238,8 +238,9 @@ object you have define in definition
 
 And in eclipse same pet Object we have created under:
 io.swagger.sample.models.Pet
+But you must define this models under 
 
-But you must define this models under inflector.yaml
+inflector.yaml
 ----------------------------------------
 ```yaml
 modelPackage: io.swagger.sample.models
