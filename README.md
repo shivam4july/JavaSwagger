@@ -262,7 +262,7 @@ http://localhost:8080/v1/pet/1
 ```
 xml:
 <Pet>
-<id>2</id>
+<id>1</id>
 <user/>
 <name>fluffy</name>
 <age>9</age>
@@ -277,7 +277,7 @@ xml:
 Json:
 
 {
-"id":2,
+"id":1,
 "name":"fluffy",
 "age":9,
 "petRequirement":"xyz",
