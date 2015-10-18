@@ -17,24 +17,37 @@ Jersey 2.6 for REST
 
 go to commnad line and go to path where you have save your project
  For Example: I have save git project in following Path:
+ ```
  /Users/admin/JavaSwagger
- 
- then run ./editor.sh  it will open Swagger Editor in your browser with documentation
- with http://localhost:8000/#
- and in command line it will show 
+ ```
+ then
+ ```
+ run ./editor.sh
+ ```
+ it will open Swagger Editor in your browser with documentation
+ with
+ ```
+ http://localhost:8000/#
+ ```
+ and in command line it will show
+ ```
 [INFO] Started ServerConnector@270b6b5e{HTTP/1.1}{0.0.0.0:8000}
 [INFO] Started @4598ms
 [INFO] Started Jetty Server
-
+```
 2) open new tab in terminal and run
+```
 mvn package jetty:run
-
-it will run your server on localhost://8080
-
+```
+it will run your server on 
+```
+localhost://8080
+```
 Now Swagger editor is nothing but swagger.yaml file
 which you can find in following path of your project
+```
 /Users/admin/JavaSwagger/src/main/swagger/swagger.yaml
-
+```yaml
 you can edit this file using editor and simultenously you can see your api related documentation will change
 
 Now check swagger.yaml file
@@ -112,7 +125,7 @@ definitions:
 
 In this yaml we have define local host:8080
 which we have define in our pom.xml
-
+#pom.xml
 ---------------------------------------------------------------------------
 ```yaml
    <plugin>
@@ -152,12 +165,12 @@ then it will check for controller
  x-swagger-router-controller: io.swagger.sample.controllers.SampleController
  which we have define in /Users/admin/JavaSwagger/inflector.yaml
  
- inflector.yaml:
+# inflector.yaml:
 ------------------------------------------------- 
 ```yaml
 controllerPackage: io.swagger.sample.controllers
 swaggerUrl: ./src/main/swagger/swagger.yaml
-```yaml
+```
 --------------------------------------------------  
 
 where package:io.swagger.sample.controllers
@@ -167,7 +180,9 @@ Now if you go to this specific package in your eclipse inside "SampleController.
 
 we have method:getPetById
 this method name should match with operationId define in swagger.yaml
+```yaml
 operationId:getPetById
+```
 
 Next is produces and consumes define as 
 application/xml
