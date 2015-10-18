@@ -251,3 +251,37 @@ entityProcessors:
   - xml
   ```
 -------------------------------------------  
+
+After made all these changes it is time to run api
+so hit following url:
+```
+http://localhost:8080/v1/pet/1
+```
+
+***Api Response***
+```
+xml:
+<Pet>
+<id>2</id>
+<user/>
+<name>fluffy</name>
+<age>9</age>
+<size/>
+<petRequirement>xyz</petRequirement>
+<hostFeature>3</hostFeature>
+<petBreed/>
+</Pet>
+```
+
+```
+Json:
+
+{
+"id":2,
+"name":"fluffy",
+"age":9,
+"petRequirement":"xyz",
+"hostFeature":"3"
+}
+```
+
