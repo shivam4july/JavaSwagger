@@ -13,9 +13,9 @@ Swagger models for the swagger definition
 Jackson for JSON processing
 Jersey 2.6 for REST
 
-1)After import project to local 
+1)Import project to local 
 
-go to commnad line and go to path where you have save your project
+Go to commnad line and go to path where you have save your project
  For Example: I have save git project in following Path:
  ```
  /Users/admin/JavaSwagger
@@ -151,7 +151,7 @@ which we have define in our pom.xml
  ```
 ------------------------------------------------------------------------------------
 Flow:
-Now what happend when you hit 
+Now what will happen when you hit 
 ```
 http://localhost:8080/v1/pet/0
 ```
@@ -159,7 +159,7 @@ http://localhost:8080/v1/pet/0
 1)It will go to swagger.yaml
 Then check for ```basePath:/v1 ``` which should match with above url
 
-2)It will check for ```paths:"pet/{petId}"``` which match with our ```url:"pet/0"```
+2)It will check for ```paths:"pet/{petId}"``` which should match with our ```url:"pet/0"```
 
 
 then it will check for controller
@@ -182,7 +182,8 @@ swaggerUrl: ./src/main/swagger/swagger.yaml
 where package:io.swagger.sample.controllers
 and  java file:SampleController
 
-Now if you go to this specific package in your eclipse inside "SampleController.java"
+Now if you go to this specific package in your eclipse.
+It is having "SampleController.java"
 
 ***SampleController.java***
 ```
@@ -233,9 +234,31 @@ Responses:
             items:
               $ref: "#/definitions/Pet"
  ```
-this means if response 200 then you must send response as $ref: "#/definitions/Pet" which is nothing but pet
-object you have define in definition
+this means if response is 200 then you must send response as $ref: "#/definitions/Pet" which is nothing but pet
+object you had define under definitions
 
+```
+definitions:
+  Pet:
+    type: object
+    properties:
+      id:
+        type: integer
+      user:
+        type: string
+      name:
+        type: string
+      age:
+        type: integer
+      size:
+        type: string
+      petReqEnum:
+        type: string 
+      hostFeatureEnum:
+        type: string
+      petBreed:
+        type: string  
+```
 And in eclipse same pet Object we have created under:
 io.swagger.sample.models.Pet
 But you must define this models under 
