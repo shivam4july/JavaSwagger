@@ -171,7 +171,7 @@ then it will check for controller
  /Users/admin/JavaSwagger/inflector.yaml
  ```
  
-*** inflector.yaml:***
+***inflector.yaml:***
 ------------------------------------------------- 
 ```yaml
 controllerPackage: io.swagger.sample.controllers
