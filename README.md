@@ -42,17 +42,15 @@ Now check swagger.yaml file
 -----------------------------------------------------------------
 swagger: '2.0'
 
-# This is your document metadata
 info:
   version: "1.0.0"
   title: Sample API
 
 basePath: /v1
 
-# Replace this with the path to your actual implementation
 host: localhost:8080
 
-# Describe your paths here
+
 paths:
   "/pet/{petId}":
     get:
