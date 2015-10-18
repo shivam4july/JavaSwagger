@@ -39,7 +39,9 @@ you can edit this file using editor and simultenously you can see your api relat
 
 Now check swagger.yaml file
 
+#swagger.yaml
 -----------------------------------------------------------------
+```yaml
 swagger: '2.0'
 
 info:
@@ -105,12 +107,14 @@ definitions:
         type: string
       petBreed:
         type: string  
+ ```
 --------------------------------------------------------------------------
 
 In this yaml we have define local host:8080
 which we have define in our pom.xml
 
 ---------------------------------------------------------------------------
+```yaml
    <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
@@ -131,6 +135,7 @@ which we have define in our pom.xml
                     </httpConnector>
                 </configuration>
             </plugin>
+ ```
 ------------------------------------------------------------------------------------
 Flow:
 Now what happend when you hit 
@@ -149,8 +154,10 @@ then it will check for controller
  
  inflector.yaml:
 ------------------------------------------------- 
+```yaml
 controllerPackage: io.swagger.sample.controllers
 swaggerUrl: ./src/main/swagger/swagger.yaml
+```yaml
 --------------------------------------------------  
 
 where package:io.swagger.sample.controllers
@@ -167,7 +174,7 @@ application/xml
 application/json
 
 Parameters:
-
+```yaml
  parameters:
         - name: petId(name of the parameter which should match with"/pet/petId")
           in: path
@@ -175,7 +182,9 @@ Parameters:
           required: true(if you set as true then you must pass in your api request)
           type: integer
           format: int32
-
+```
+Response
+```yaml
 Responses:
         "200":
           description: successful operation
@@ -183,6 +192,7 @@ Responses:
             type: array
             items:
               $ref: "#/definitions/Pet"
+ ```
 this means if response 200 then you must send response as $ref: "#/definitions/Pet" which is nothing but pet
 object you have define in definition
 
@@ -191,10 +201,12 @@ io.swagger.sample.models.Pet
 
 But you must define this models under inflector.yaml
 ----------------------------------------
+```yaml
 modelPackage: io.swagger.sample.models
 modelMappings:
   Pet: io.swagger.sample.models.Pet
 entityProcessors:
   - json
   - xml
+  ```
 -------------------------------------------  
